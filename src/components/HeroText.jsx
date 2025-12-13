@@ -1,7 +1,7 @@
 import React from 'react'
 import Video from './Video'
 
-const HomeHeroText = () => {
+const HeroText = () => {
   return (
     <div className='flex flex-col items-center font-[Lausanne-300]'>
       <div className='text-[9vw] leading-none uppercase'>L'étincelle</div>
@@ -12,11 +12,9 @@ const HomeHeroText = () => {
           </div>
         génère
       </div>
-      <div className='text-[9vw] leading-none uppercase'>lacréativité</div>
-
-      
+      <div className='text-[9vw] leading-none uppercase'>lacréativité</div>      
     </div>
   )
 }
 
-export default HomeHeroText
+export default HeroText

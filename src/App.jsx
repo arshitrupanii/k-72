@@ -2,30 +2,12 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Agence from "./pages/Agence";
+import Navbar from "./components/Navbar";
 
 function App() {
-  let currentScroll = window.scrollY;
-
-  window.addEventListener(
-    "wheel",
-    (e) => {
-      e.preventDefault();
-      currentScroll += e.deltaY * 0.2; // smaller = slower
-      currentScroll = Math.max(
-        0,
-        Math.min(currentScroll, document.body.scrollHeight - window.innerHeight)
-      );
-
-      window.scrollTo({
-        top: currentScroll,
-        behavior: "smooth",
-      });
-    },
-    { passive: false }
-  );
-
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />

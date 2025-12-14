@@ -54,7 +54,7 @@ const Agence = () => {
   return (
     <>
     
-    <div className="text-black min-h-screen relative">
+    <div className="bg-black text-white min-h-screen relative">
       {/* img */}
       <div
         ref={imgDivref}
@@ -88,7 +88,7 @@ const Agence = () => {
       </div>
     </div>
 
-    <div className="h-screen">
+    <div className="h-screen bg-black">
 
     </div>
     </>

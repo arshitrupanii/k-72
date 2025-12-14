@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: Lausanne-300;
     src: url("./assets/fonts/Lausanne-300.woff2");

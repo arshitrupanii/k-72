@@ -1,4 +1,3 @@
-import React from "react";
 import Video from "../components/Video";
 import HeroText from "../components/HeroText";
 import HeroButton from "../components/HeroButton";
@@ -23,7 +22,7 @@ const home = () => {
 
         {/* middle text */}
         <div className="w-screen flex justify-end">
-          <p className="w-[20vw] max-h-[20vh] overflow-hidden text-sm">
+          <p className="w-[20vw] max-h-[20vh] overflow-hidden text-sm indent-[5em]">
             K72 est une agence qui pense chaque action pour nourrir la marque.
             Demain, dans 5 mois et dans 5 ans. On cherche la friction qui crée
             l'étincelle pour générer de l'émotion. Pour assurer une relation

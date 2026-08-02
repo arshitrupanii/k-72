@@ -1,7 +1,17 @@
 const Video = () => {
   return (
-    <div className='w-full h-full'>
-      <video className='w-full h-full object-cover' autoPlay loop playsInline controls={false} src="bg-video.mp4"></video>
+    <div className="video-frame">
+      <video
+        className="video-frame__media"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        controls={false}
+        src="/bg-video.mp4"
+        aria-label="Film de présentation K72"
+      />
     </div>
   )
 }

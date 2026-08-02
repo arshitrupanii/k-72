@@ -1,19 +1,16 @@
-import React from 'react'
 import Video from './Video'
 
 const HeroText = () => {
   return (
-    <div className='flex flex-col items-center font-[Lausanne-300] text-[9vw] leading-none uppercase'>
-      <div>L'étincelle</div>
-      <div className='flex'>
+    <h1 className="hero-title">
+      <span>L’étincelle</span>
+      <span className="hero-title__middle">
         qui
-          <div className='w-[15vw] h-[7vw] rounded-full overflow-hidden'>
-            <Video/>
-          </div>
+        <span className="hero-title__video"><Video /></span>
         génère
-      </div>
-      <div>lacréativité</div>      
-    </div>
+      </span>
+      <span>la créativité</span>
+    </h1>
   )
 }
 

@@ -1,0 +1,20 @@
+export const team = [
+  ["Carl Godbout", "Directeur principal", "Carl_480x640-480x640.jpg"],
+  ["Olivier Duclos", "Directeur artistique", "Olivier_480x640-480x640.jpg"],
+  ["Lawrence", "Stratégie", "Lawrence_480x640-480x640.jpg"],
+  ["Hugo Joseph", "Création", "HugoJoseph_480x640-480x640.jpg"],
+  ["Chantal Gobeil", "Directrice de création", "ChantalG_480x640-480x640.jpg"],
+  ["Mylène", "Conseil", "MyleneS_480x640-480x640.jpg"],
+  ["Sophie", "Production", "SophieA_480x640-480x640.jpg"],
+  ["Claire", "Design", "Claire_480x640-480x640.jpg"],
+  ["Michèle Riendeau", "Directrice de la stratégie", "Michele_480X640-480x640.jpg"],
+  ["Mélanie Laviolette", "Directrice artistique", "MEL_480X640-480x640.jpg"],
+  ["Camille Brière", "Conceptrice-rédactrice", "CAMILLE_480X640_2-480x640.jpg"],
+  ["Maxime", "Création", "MAXIME_480X640_2-480x640.jpg"],
+  ["Meggie Lavoie", "Directrice conseil", "MEGGIE_480X640_2-480x640.jpg"],
+  ["Joël Letarte", "Directeur de création adjoint", "joel_480X640_3-480x640.jpg"],
+].map(([name, role, file]) => ({
+  name,
+  role,
+  image: `https://k72.ca/uploads/teamMembers/${file}`,
+}));

@@ -1,8 +1,8 @@
 const Video = () => {
   return (
-    <div className="video-frame">
+    <div className="h-full w-full">
       <video
-        className="video-frame__media"
+        className="h-full w-full object-cover"
         autoPlay
         muted
         loop

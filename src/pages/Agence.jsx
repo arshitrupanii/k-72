@@ -64,19 +64,19 @@ const Agence = () => {
   }, { scope: pageRef });
 
   return (
-    <PageShell className="agency-page">
+    <PageShell className="overflow-hidden bg-black">
       <div ref={pageRef}>
-        <section ref={introRef} className="agency-intro">
-          <div className="agency-intro__sticky">
-            <div className="agency-portrait" aria-hidden="true">
-              <img ref={imageRef} src={team[0].image} alt={team[0].name} />
+        <section ref={introRef} className="h-[220svh] md:h-[285svh]">
+          <div className="sticky top-0 grid h-svh place-items-center overflow-hidden">
+            <div className="absolute z-[1] aspect-[3/4] w-[36vw] max-w-40 rotate-3 overflow-hidden rounded-2xl after:absolute after:inset-0 after:shadow-[inset_0_0_0_1px_rgba(255,255,255,.1)] md:w-[clamp(9rem,16vw,18rem)] md:max-w-none" aria-hidden="true">
+              <img className="h-full w-full object-cover" ref={imageRef} src={team[0].image} alt={team[0].name} />
             </div>
-            <h1><span>SOIXAN7E</span><span>DOUZE</span></h1>
+            <h1 className="relative z-[2] m-0 flex w-full flex-col px-[var(--gutter)] text-center text-[clamp(3.6rem,16vw,6rem)] font-medium uppercase leading-[.72] tracking-[-.06em] md:text-[clamp(6rem,19vw,21rem)] md:tracking-[-.08em]"><span>SOIXAN7E</span><span>DOUZE</span></h1>
           </div>
         </section>
 
-        <section className="agency-statement section-pad" data-reveal>
-          <p>
+        <section className="flex justify-start px-[var(--gutter)] py-[clamp(5rem,10vw,10rem)] pt-8 md:justify-end" data-reveal>
+          <p className="m-0 w-full text-[clamp(2rem,8vw,4rem)] font-medium leading-[.98] tracking-[-.035em] indent-[12%] md:w-[min(68rem,72vw)] md:text-[clamp(2.2rem,5.2vw,6rem)] md:leading-[.96] md:tracking-[-.045em] md:indent-[19%]">
             Notre curiosité nourrit notre créativité. On reste humbles et on dit
             non aux gros egos, même le vôtre. Une marque est vivante. Elle a des
             valeurs, une personnalité, une histoire. Si on oublie ça, on peut
@@ -86,39 +86,45 @@ const Agence = () => {
           </p>
         </section>
 
-        <section className="expertise section-pad" data-reveal>
-          <div className="section-label">01 / Expertise</div>
-          <h2>Expertise</h2>
-          <ul>{expertise.map((item) => <li key={item}>{item}<span>↗</span></li>)}</ul>
+        <section className="px-[var(--gutter)] py-[clamp(5rem,10vw,10rem)]" data-reveal>
+          <div className="mb-[clamp(3rem,8vw,8rem)] text-[.78rem] uppercase tracking-[.08em]">01 / Expertise</div>
+          <h2 className="m-0 mb-[.4em] text-[clamp(4.5rem,22vw,8rem)] leading-[.8] md:text-[clamp(5rem,15vw,16rem)]">Expertise</h2>
+          <ul className="m-0 list-none border-t border-white/40 p-0">
+            {expertise.map((item) => (
+              <li className="flex justify-between border-b border-white/40 py-[.16em] text-[clamp(2.6rem,13vw,5rem)] leading-none tracking-[-.05em] md:text-[clamp(3rem,7vw,8rem)]" key={item}>
+                {item}<span className="text-[.45em] opacity-50">↗</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
-        <section className="principles section-pad" aria-label="Notre philosophie">
+        <section className="grid grid-cols-1 gap-px bg-white/25 py-[clamp(5rem,10vw,10rem)] pt-0 pb-0 md:grid-cols-3" aria-label="Notre philosophie">
           {principles.map(([title, copy], index) => (
-            <article key={title} data-reveal>
-              <span>0{index + 1}</span>
-              <p><strong>{title}</strong> {copy}</p>
+            <article className="flex min-h-[23rem] flex-col justify-between bg-black p-4 md:min-h-[34rem]" key={title} data-reveal>
+              <span className="text-[.75rem]">0{index + 1}</span>
+              <p className="m-0 text-[clamp(1.8rem,2.7vw,3.5rem)] leading-[1.02] tracking-[-.03em]"><strong className="font-medium text-[var(--lime)]">{title}</strong> {copy}</p>
             </article>
           ))}
         </section>
 
-        <section className="team-section section-pad">
-          <div className="section-label">02 / L’équipage</div>
-          <h2 data-reveal>Notre équipe<sup>{team.length}</sup></h2>
-          <div className="team-grid">
-            {team.map((member) => (
-              <article className="team-card" key={member.name} data-reveal>
-                <img src={member.image} alt={member.name} loading="lazy" />
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
+        <section className="px-[var(--gutter)] py-[clamp(5rem,10vw,10rem)]">
+          <div className="mb-[clamp(3rem,8vw,8rem)] text-[.78rem] uppercase tracking-[.08em]">02 / L’équipage</div>
+          <h2 className="mt-[.35em] mb-[1em] text-[clamp(3.6rem,17vw,7rem)] font-medium uppercase leading-[.78] tracking-[-.075em] md:text-[clamp(5rem,14vw,15rem)]" data-reveal>Notre équipe<sup className="ml-[.15em] align-top text-[.15em] tracking-normal">{team.length}</sup></h2>
+          <div className="grid grid-cols-2 gap-x-2 gap-y-12 md:grid-cols-4 md:gap-x-3 md:gap-y-16">
+            {team.map((member, index) => (
+              <article className={`group ${index % 4 === 1 || index % 4 === 3 ? "md:translate-y-12" : ""}`} key={member.name} data-reveal>
+                <img className="aspect-[3/4] w-full object-cover grayscale transition duration-300 group-hover:rounded-t-full group-hover:rounded-b-2xl group-hover:grayscale-0" src={member.image} alt={member.name} loading="lazy" />
+                <h3 className="mt-3 mb-1 text-[.95rem] font-medium md:text-[1.1rem]">{member.name}</h3>
+                <p className="m-0 text-[.75rem] text-[#aaa]">{member.role}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="featured-work section-pad">
-          <div className="section-label">03 / Encore plus</div>
-          <h2 data-reveal>Projets choisis</h2>
-          <div className="featured-grid">
+        <section className="px-[var(--gutter)] py-[clamp(5rem,10vw,10rem)]">
+          <div className="mb-[clamp(3rem,8vw,8rem)] text-[.78rem] uppercase tracking-[.08em]">03 / Encore plus</div>
+          <h2 className="m-0 mb-[.4em] text-[clamp(4.5rem,22vw,8rem)] leading-[.8] md:text-[clamp(5rem,15vw,16rem)]" data-reveal>Projets choisis</h2>
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-[var(--gutter)]">
             {featuredProjects.map((project) => <ProjectCard key={project.slug} project={project} featured />)}
           </div>
         </section>
